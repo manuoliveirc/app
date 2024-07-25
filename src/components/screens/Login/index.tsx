@@ -3,8 +3,23 @@ import { KeyboardAvoidingView, View, Text, TextInput, Alert } from 'react-native
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { styles } from './styles';
 import { colors } from '../../styles/colors';
-import { ComponentButtonInterface } from '../../components';
 import { LoginTypes } from '../../navigation/login.navigation';
+import { MenuStackTypes } from '../../navigation/MenuStack.navigation';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+
+export function ScreenLogin({ navigation }: MenuStackTypes) {
+    return (
+        <View style={styles.container}>
+            <Text style={styles.text}>Login</Text>
+            <TouchableOpacity style={styles.botton }
+            onPress={() => navigation.push("Register")}
+            >
+                <Text>Register</Text>
+            </TouchableOpacity>         
+        </View>
+    )
+}
 
 export interface IAuthenticate {
     email?: string;

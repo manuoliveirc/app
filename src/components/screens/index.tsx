@@ -1,2 +1,2 @@
-export {Page1 as ScreenPage1} from './Login'
-export {Page2 as ScreenPage2} from './Register'
+export {Login as ScreenLogin} from './Login'
+export {Register as ScreenRegister} from './Register'
