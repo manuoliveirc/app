@@ -6,20 +6,8 @@ import { colors } from '../../styles/colors';
 import { LoginTypes } from '../../navigation/login.navigation';
 import { MenuStackTypes } from '../../navigation/MenuStack.navigation';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { ComponentButtonInterface } from '../../components';
 
-
-export function ScreenLogin({ navigation }: MenuStackTypes) {
-    return (
-        <View style={styles.container}>
-            <Text style={styles.text}>Login</Text>
-            <TouchableOpacity style={styles.botton }
-            onPress={() => navigation.push("Register")}
-            >
-                <Text>Register</Text>
-            </TouchableOpacity>         
-        </View>
-    )
-}
 
 export interface IAuthenticate {
     email?: string;
@@ -69,7 +57,7 @@ export function Login({ navigation }: LoginTypes) {
                     />
                 </View>
                 <ComponentButtonInterface title='Login' type='primary' onPressI={handleSignIn} />
-                <ComponentButtonInterface title='Cadastre-se' type 'secondary' onPressI={handleRegister} />   
+                <ComponentButtonInterface title='Cadastre-se' type= 'secondary' onPressI={handleRegister} />   
             </KeyboardAvoidingView>
         </View>
     );

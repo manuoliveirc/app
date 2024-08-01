@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     borderColor: colors.primary,
     borderRadius: 5
    },
-   icons: {
+   icon: {
     fontSize: 28,
     color: colors.primary,
     padding: 5
@@ -29,6 +29,6 @@ export const styles = StyleSheet.create({
    input: {
       fontSize: 18,
       padding: 10,
-      width: 70%
-   },
+      width: '70%'
+   }
 })

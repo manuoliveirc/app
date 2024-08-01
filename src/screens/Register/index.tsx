@@ -4,6 +4,7 @@ import { MaterialIcons, Entypo, Ionicons } from '@expo/vector-icons';
 import { styles } from './styles';
 import { colors } from '../../styles/colors';
 import { LoginTypes } from '../../navigation/login.navigation';
+import { ComponentButtonInterface } from "../../components"
 
 export interface IRegister {
     name?: string
@@ -11,7 +12,7 @@ export interface IRegister {
     password?: string
 }
 
-export function ScreenRegister({ navigation }: LoginTypes) {
+export function Register({ navigation }: LoginTypes) {
     const [data, setData] = useState<IRegister>();
     async function handleRegister() {
         if (data?.email && data.name && data.password) {
