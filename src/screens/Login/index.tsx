@@ -4,9 +4,9 @@ import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { styles } from './styles';
 import { colors } from '../../styles/colors';
 import { LoginTypes } from '../../navigation/login.navigation';
-import { MenuStackTypes } from '../../navigation/MenuStack.navigation';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ComponentButtonInterface } from '../../components';
+import { useAuth } from "../../hook/auth";
+import { AxiosError } from 'axios';
 
 
 export interface IAuthenticate {
@@ -16,9 +16,18 @@ export interface IAuthenticate {
 
 export function Login({ navigation }: LoginTypes) {
     const[data, setData] = useState<IAuthenticate>();
+    const { signIn, setLoading } = useAuth()
     async function handleSignIn() {
         if (data?.email && data.password) {
-            console.log(data)
+            setLoading(true)
+            try {
+                await signIn(data)
+            } catch (error) {
+                const err = error as AxiosError
+                const msg = err.response?.data as string
+                Alert.alert(msg)
+            }
+            setLoading(false)
         } else {
             Alert.alert("Preencha todos os campos!");
         }

@@ -7,3 +7,28 @@ type MenuTabParam = {
     Register: undefined
 }
 type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Login">
+export type MenuTabTypes = {
+    navigation: MenuScreenNavigation
+}
+
+export function MenuTabs() {
+    const Tab = createBottomTabNavigator<MenuTabParam>();
+    return (
+        <Tab.Navigator>
+            <Tab.Screen name="Login" component={ScreenLogin}
+                options={{
+                    tabBarIcon: () => (
+                        <Entypo name="slideshare" size={24} colors="black" />
+                    )
+                }}
+            />
+            <Tab.Screen name="Register" component={ScreenRegister}
+                options={{
+                    tabBarIcon: () => (
+                        <Feather name="sliders" size={24} colors="black" />
+                    )
+                }}
+            />
+        </Tab.Navigator>
+    );
+}
