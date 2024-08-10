@@ -1,11 +1,30 @@
-import { View, Text } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import { styles } from "./styles";
 import React from "react";
+import { useEffect, useState } from "react";
+import { apiMessage } from "../../services/data";
+import { IResponseMessage } from "../../services/data/Message";
+import { useAuth } from "../../hook/auth";
 
 export function Mensagem() {
-    return (
-        <View style={styles.container}>
-            <Text>Mensagem</Text>
-        </View>
-    )
+    const [message, setMessage] = useState<IResponseMessage[]>([])
+    const { setLoading } = useAuth()
+    useEffect(() => {
+        setLoading(true)
+        async function loadMessage() {
+            const response = await apiMessage.index()
+            setMessage(response.data)
+        }
+        setLoading(false)
+        loadMessage()
+    }, [])
+
+    interface itemMessage {
+        item: IResponseMessage
+    }
+    const renderItem = (({item}: itemMessage) => {
+        return (
+            
+        )
+    })
 }

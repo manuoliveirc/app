@@ -4,11 +4,18 @@ import { LoginNavigation } from "./login.navigation";
 import { MenuStack } from './MenuStack.navigation';
 import { MenuTabs } from "./MenuBottomTab.navigation";
 import { MenuDrawer } from "./MenuDrawer.navigation"; 
+import { useAuth } from '../hook/auth';
+import { DrawerNavigation } from './drawer.navigation';
+import { ComponentLoading } from '../components';
 
 export function Navigation(){
+    const { user, loading} = useAuth()
+    if (loading) {
+        return <ComponentLoading />
+    }
     return (
         <NavigationContainer>
-            <LoginNavigation />
+            {user?.token ? <DrawerNavigation /> : <LoginNavigation />}
         </NavigationContainer>
-    );
+    )
 }

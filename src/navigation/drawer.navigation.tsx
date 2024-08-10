@@ -26,7 +26,7 @@ export function DrawerNavigation() {
                     drawerLabel: 'Perfil',
                     headerTitle: 'Perfil',
                     drawerIcon: () => (
-                        <Ionicons name="person" size {24} color={colors.white} />
+                        <Ionicons name="person" size={24} color={colors.white} />
                     ),
                 }}
             />
