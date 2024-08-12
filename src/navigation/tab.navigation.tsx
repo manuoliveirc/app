@@ -2,6 +2,7 @@ import { createBottomTabNavigator, BottomTabNavigationProp } from "@react-naviga
 import { ScreenMensagem, ScreenPerfil } from '../screens';
 import { colors } from '../styles/colors';
 import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { MessageNavigation } from "./message.navigation";
 type TabParamList = {
     Perfil: undefined
     Mensagem: undefined
@@ -30,7 +31,7 @@ export function TabNavigation(){
                     ),
                 }}
             />
-            <Tab.Screen name='Mensagem' component={ScreenMensagem}
+            <Tab.Screen name='Mensagem' component={MessageNavigation}
                 options={{
                     tabBarIcon: () => (
                         <AntDesign name="message1" size={24} color={colors.white} />
