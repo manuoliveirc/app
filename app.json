@@ -22,6 +22,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins":[
+      [
+        "expo-camera",
+        {
+          "cameraPermission":"Permita $(m) acessar suas fotos.",
+          "savePhotosPermission":"Permita $(m) salvar suas fotos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ]
   }
 }

@@ -2,6 +2,7 @@ import { createDrawerNavigator, DrawerNavigationProp } from "@react-navigation/d
 import { colors } from "../styles/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { TabNavigation } from "./tab.navigation";
+import { ScreenCamera } from "../screens";
 type DrawerParamList = {
     Tab: undefined
 }
@@ -27,6 +28,13 @@ export function DrawerNavigation() {
                     headerTitle: 'Perfil',
                     drawerIcon: () => (
                         <Ionicons name="person" size={24} color={colors.white} />
+                    ),
+                }}
+            />
+             <Drawer.Screen name='Camera' component={ScreenCamera}
+                options={{
+                    drawerIcon: () => (
+                        <Ionicons name="camera" size={24} color={colors.white} />
                     ),
                 }}
             />
