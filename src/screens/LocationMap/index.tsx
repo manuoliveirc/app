@@ -63,8 +63,8 @@ export function LocationMap(){
                         ))}
                     <Polyline
                         coordinates={[
-                            { latitude: -21.5777163, longitude: -45.446078 },
-                            { latitude: -21.573369, longitude: -45.448295},
+                            { latitude: region.latitude, longitude: region.longitude },
+                            { latitude: -21.573369, longitude: -45.448295 },
                         ]}
                         strokeColor={colors.black}
                         strokeWidth={7}
