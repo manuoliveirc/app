@@ -27,8 +27,8 @@
       [
         "expo-camera",
         {
-          "cameraPermission":"Permita $(m) acessar suas fotos.",
-          "savePhotosPermission":"Permita $(m) salvar suas fotos.",
+          "cameraPermission":"Permita $(PRODUCT_NAME) acessar suas fotos.",
+          "savePhotosPermission":"Permita $(PRODUCT_NAME) salvar suas fotos.",
           "isAccessMediaLocationEnabled": true
         }
       ],
@@ -44,6 +44,12 @@
         "expo-image-picker",
         {
           "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permita $(PRODUCT_NAME) acessar sua localização."
         }
       ]
     

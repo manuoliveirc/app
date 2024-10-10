@@ -1,8 +1,8 @@
 import { createDrawerNavigator, DrawerNavigationProp } from "@react-navigation/drawer";
 import { colors } from "../styles/colors";
-import { FontAwesome, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { FontAwesome, FontAwesome5, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { TabNavigation } from "./tab.navigation";
-import { ScreenCamera, ScreenImagens, ScreenQrCode } from "../screens";
+import { ScreenCamera, ScreenImagens, ScreenQrCode, ScreenLocation } from "../screens";
 type DrawerParamList = {
     Tab: undefined
 }
@@ -49,6 +49,13 @@ export function DrawerNavigation() {
                 options={{
                     drawerIcon: () => (
                         <MaterialCommunityIcons name="qrcode-scan" size={24} color={colors.white} />
+                    ),
+                }}
+            />
+            <Drawer.Screen name='Location' component={ScreenLocation}
+                options={{
+                    drawerIcon: () => (
+                        <FontAwesome5 name="map-marked-alt" size={24} color={colors.white} />
                     ),
                 }}
             />
